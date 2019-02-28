@@ -24,7 +24,7 @@ img {
 .project-card {
   overflow: hidden;
   border-radius: 10px;
-  margin: 1rem 0.5rem;
+  margin: 1rem 1vw;
 }
 </style>
 

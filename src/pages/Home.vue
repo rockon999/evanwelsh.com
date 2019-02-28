@@ -4,8 +4,8 @@
     <!--TODO <portfolio-nav id="navbar"/>-->
     <b-container>
       <div class="header" id="projects">Projects</div>
-      <b-row>
-        <b-col v-for="project of projects" :key="project.name" sm="6" md="4">
+      <b-row :no-gutters="true">
+        <b-col v-for="project of projects" :key="project.name" sm="12" md="6" lg="4">
           <project-card
             @more-info-clicked="displayMoreInfoModal"
             :image-path="project.imagePath"

@@ -1,8 +1,7 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 import Home from '@/pages/Home';
-import Projects from '@/pages/Projects';
-import Blog from '@/pages/Blog';
+import NotFound from '@/pages/NotFound';
 
 Vue.use(Router);
 
@@ -13,14 +12,9 @@ export default new Router({
   mode: 'history',
   routes: [
     {
-      path: '/blog',
-      name: 'Blog',
-      component: () => Blog
-    },
-    {
-      path: '/projects',
+      path: '*',
       name: 'Projects',
-      component: () => Projects
+      component: NotFound
     },
     {
       path: '/',
