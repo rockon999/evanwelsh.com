@@ -15,13 +15,29 @@
       </b-row>
       <div class="header" id="about">About</div>
       <b-row>
-        <b-col order-sm="2" order-md="2" md="8" sm="12">
-          I am a passionate problem-solver who loves exploring new technologies and applications to create products that will resonate with users and also be maintainable for years to come.
-          Luckily, I have been able to work in a wide variety of areas over my past 8 years of developing. I started out developing Minecraft plugins and mods in middle school and later in high school transitioned to JavaScript and C development within the GNOME GNU/Linux ecosystem.
-          In my college years, I have had internships in both web and mobile development and had the opportunity to work with several organizations on projects in both these areas. I have used Ionic, React Native, and Flutter to build cross-platform mobile applications, Vue.js and React for web frontends, and Express and Rails for backend projects. I use a diverse array of languages in my development including JavaScript, C, Python, Java, TypeScript, PHP, and Kotlin.
+        <b-col order="2" order-md="2" md="8" sm="12">
+          I am a passionate problem-solver who loves exploring new technologies and applications to create
+          products that will resonate with users and also be maintainable for years to come.
+          Luckily, I have been able to work in a wide variety of areas over my past 8 years of
+          developing. I started out developing Minecraft plugins and mods in middle school and later in
+          high school transitioned to JavaScript and C development within the GNOME GNU/Linux ecosystem.
+          In my college years, I have had internships in both web and mobile development and had the
+          opportunity to work with several organizations on projects in both these areas. I have used Ionic, React Native, and Flutter to build cross-platform mobile applications, Vue.js and React for web frontends, and Express and Rails for backend projects. I use a diverse array of languages in my development including JavaScript, C, Python, Java, TypeScript, PHP, and Kotlin.
         </b-col>
-        <b-col order-sm="1" order-md="1" md="4" sm="12">
-          <b-img class="about-img" rounded thumbnail src="/static/images/me.jpg"/>
+        <b-col
+          class="about-img-container"
+          align-self="center"
+          order="1"
+          order-md="1"
+          md="4"
+          cols="auto"
+        >
+          <b-img
+            class="text-center about-img"
+            rounded="circle"
+            thumbnail
+            src="/static/images/me.jpg"
+          />
         </b-col>
       </b-row>
     </b-container>
@@ -94,6 +110,19 @@
 .modal-enter,
 .modal-leave-to {
   opacity: 0;
+}
+
+@media (max-width: 767px) {
+  .about-img {
+    margin-bottom: 2rem;
+    padding-right: 10vw;
+    padding-left: 10vw;
+  }
+
+  .about-img-container {
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 .about-img {
