@@ -1,0 +1,75 @@
+[
+  {
+    "id": "dynamic-panel-transparency",
+    "name": "Dynamic Panel Transparency",
+    "description": "This extension fades your top panel to nothingness when there are no maximized windows present. Never again will the panel be abruptly darkened!",
+    "imagePath": "/static/images/projects/dynamic-panel-transparency/side-by-side.png",
+    "actionUrl": "https://extensions.gnome.org/extension/1011/dynamic-panel-transparency/",
+    "githubUrl": "https://github.com/rockon999/dynamic-panel-transparency/"
+  },
+  {
+    "id": "leanback-launcher",
+    "name": "Leanback Launcher (on Fire)",
+    "description": "As a side project, I ported the Leanback Launcher from Google's Android TV to Amazon's Fire TV Stick. This project involved diving deap into the launcher codebase and rewriting several critical portions to run in userspace instead of the expected rootspace. I also had change several API calls as Amazon FireOS lacks much of the Google-specific Android APIs. Finally, I added several user interface tweaks to allow users to edit the ordering of their applications, row ordering, and also a custom interface with the userspace notifications listener.",
+    "imagePath": "https://img.xda-cdn.com/2gw2Gf6uRMrWT0Zd7X-4kKuYkMY=/https%3A%2F%2Fdl.xda-developers.com%2F4%2F4%2F2%2F1%2F6%2F0%2F4%2F1.jpg%3Fkey%3DwA_qGc-qnyvoTiQFr6Vn0g%26ts%3D1518769090",
+    "actionText": "XDA Forums Post",
+    "actionUrl": "https://forum.xda-developers.com/fire-tv/development/app-leanback-launcher-fire-tv-t3750451/",
+    "githubUrl": "https://github.com/rockon999/LeanbackLauncher"
+  },
+  {
+    "id": "devdocs",
+    "name": "DevDocs",
+    "description": "As part of my internship with GNOME I worked heavily on the DevDocs.io codebase. GNOME JavaScript utilizes DevDocs to display the vast number of documentations for JavaScript library bindings within the GNOME ecosystem. I rebased GNOME's fork on top of master, contributed several fixes to the rendering stack for the documentation, and finally oversaw a port of the codebase from CoffeeScript to ES6.",
+    "imagePath": "/static/images/projects/devdocs/devdocs.png",
+    "actionUrl": "https://devdocs.baznga.org",
+    "actionText": "Go To Site"
+  },
+  {
+    "id": "eatery-android",
+    "name": "Eatery Android",
+    "description": "Eatery is an application made by Cornell AppDev. After they released the Android version of their application I forked their repository and made corrections to the codebase to bring it in line with both Android specifications and Material Design. I later submitted a pull request with my changes, some of which were merged into the master branch.",
+    "imagePath": "",
+    "actionUrl": "",
+    "githubUrl": "https://github.com/rockon999/eatery-android"
+  },
+
+  {
+    "id": "tvsettingsonfire",
+    "name": "TvSettingsOnFire",
+    "description": "In conjunction with my Leanback Launcher port I also created TvSettingsOnFire. This was a complete port of the AOSP settings application for Android TV to the Fire TV ecosystem. While the Leanback port required some work in rewriting components for userspace, the TvSettingsOnFire port was particularly challenging as several high-level system APIs were unavailable to userspace applications in Android 5.1. To work around this I employed several solutions, one of which was for storage visualization. The storage APIs that the default Android Settings application relies on are only available to system applications as they allow the application to access the storage metrics for all users on the device, a potential security flaw if a userspace application could gain information on another user's profile. Instead, I reimplemented the storage interface utilizing a userspace API which gave the storage per user directory. This was possible, albeit slower, as the Fire TV does not support multiple users and thus we can assume that the storage available to a single user is certainly the storage for the entire userspace.",
+    "imagePath": "",
+    "actionUrl": "",
+    "githubUrl": "https://github.com/rockon999/TvSettingsOnFire"
+  },
+  {
+    "id": "cornelldti-org",
+    "name": "Cornell DTI Website Redesign",
+    "description": "As part of Cornell Design & Tech Initiative I lead the rewriting of our website, from scratch, in Vue.js.",
+    "imagePath": "",
+    "actionText": "Go To Site",
+    "actionUrl": "https://cornelldti.org",
+    "githubUrl": "https://github.com/cornell-dti/nova.cornelldti.org"
+  },
+  {
+    "id": "no-spring",
+    "name": "No Spring",
+    "description": "I utilize the GNOME Desktop for my day-to-day computing and I have written several extension for it. No spring removes the animation from the app drawer when opening. This vastly improves performance of the shell on many older machines (especially laptops).",
+    "imagePath": "",
+    "actionUrl": "https://extensions.gnome.org/extension/1303/no-spring/",
+    "githubUrl": "https://github.com/rockon999/no-spring"
+  },
+  {
+    "id": "app-menu-always",
+    "name": "App Menu Always",
+    "description": "GNOME recently decided to begin removing app menus from their desktop and relocate the functionality to the applications themselves. I was a bit ahead of the game a few years ago and wrote App Menu Always which relocates application menus to the applications they belong to while still preserving the topbar visual.",
+    "imagePath": ""
+  },
+  {
+    "id": "no-symbolic-icons",
+    "name": "No Symbolic Icons",
+    "description": "I also created this extension for the GNOME Shell desktop which disables \"symbolic icons\". Symbolic icons are simplified grayscale versions of the tradition application icon. These are used in some interfaces to \"simplify\" the experience. This extension disables them in favor of the fully colorful default icon everywhere. It is largely a stylistic choice, but for many they prefer the same app icon everywhere for consistency.",
+    "imagePath": "",
+    "githubUrl": "https://github.com/rockon999/no-symbolic-icons",
+    "actionUrl": "https://extensions.gnome.org/extension/1304/no-symbolic-icons/"
+  }
+]

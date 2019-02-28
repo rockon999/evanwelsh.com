@@ -1,16 +1,25 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway:200,400,500,600|Space+Mono');
 
+@import './scss/variables';
+
 @import 'node_modules/bootstrap/scss/bootstrap-reboot';
 @import 'node_modules/bootstrap/scss/bootstrap-grid';
+@import 'node_modules/bootstrap/scss/close';
 @import 'node_modules/bootstrap/scss/buttons';
 @import 'node_modules/bootstrap/scss/modal';
 @import 'node_modules/bootstrap/scss/nav';
 @import 'node_modules/bootstrap/scss/navbar';
 @import 'node_modules/bootstrap/scss/forms';
+@import 'node_modules/bootstrap/scss/card';
 @import 'node_modules/bootstrap/scss/utilities';
 @import 'node_modules/bootstrap/scss/_alert';
 @import 'node_modules/bootstrap/scss/tables';
 
+.navbar-dark .navbar-nav .nav-link {
+  color: rgba(255, 255, 255, 1);
+}
+
 body {
+  position: relative;
   margin: 0;
 }

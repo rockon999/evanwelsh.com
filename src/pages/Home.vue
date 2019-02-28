@@ -1,193 +1,150 @@
 <template>
-  <header class="header-container">
-    <h1 class="website-title">
-      <a href="/">evan welsh</a>
-    </h1>
-    <h3 class="website-subtitle">Developer. Designer. Nerd.</h3>
-    <div class="social-media">
-      <ul>
-        <li>
-          <i class="social-media-icon fa fa-envelope icon-link"></i>
-          <a href="mailto:contact@evanwelsh.com" class="icon-link-a">
-            <i>email</i>
-          </a>
-        </li>
-        <li>
-          <i class="social-media-icon fa fa-github icon-link"></i>
-          <a href="http://github.com/rockon999/" class="icon-link-a">
-            <i>github</i>
-          </a>
-        </li>
-      </ul>
-    </div>
-    <portfolio-nav/>
-  </header>
+  <div>
+    <portfolio-header/>
+    <!--TODO <portfolio-nav id="navbar"/>-->
+    <b-container>
+      <div class="header" id="projects">Projects</div>
+      <b-row>
+        <b-col v-for="project of projects" :key="project.name" sm="6" md="4">
+          <project-card
+            @more-info-clicked="displayMoreInfoModal"
+            :image-path="project.imagePath"
+            :project="project"
+          />
+        </b-col>
+      </b-row>
+      <div class="header" id="about">About</div>
+      <b-row>
+        <b-col
+          order-sm="2"
+          order-md="2"
+          md="8"
+          sm="12"
+        >I am a passionate problem-solver who loves exploring new technologies and applications to create products that will resonate with users and also be maintainable for years to come.</b-col>
+        <b-col order-sm="1" order-md="1" md="4" sm="12">
+          <b-img class="about-img" rounded thumbnail src="/static/images/me.jpg"/>
+        </b-col>
+      </b-row>
+    </b-container>
+    <br>
+    <br>
+    <br>
+    <transition name="modal">
+      <b-modal
+        v-show="isShowing"
+        v-model="isShowing"
+        no-fade
+        size="lg"
+        centered
+        ref="moreInfoModal"
+        id="moreInfoModal"
+      >
+        <template v-if="modalProject">
+          <b-container>
+            <b-row>
+              <b-col>
+                <b-img
+                  v-if="modalProject.imagePath"
+                  class="modal-image"
+                  :src="modalProject.imagePath"
+                  rounded
+                />
+                <h3 class="modal-body-header">{{modalProject.name}}</h3>
+                <p>{{ modalProject.description }}</p>
+              </b-col>
+            </b-row>
+          </b-container>
+          <div slot="modal-footer">
+            <b-button
+              v-if="modalProject.githubUrl"
+              :href="modalProject.githubUrl"
+              variant="default"
+            >GitHub</b-button>
+            <b-button
+              v-if="modalProject.actionUrl"
+              :href="modalProject.actionUrl"
+              variant="primary"
+            >{{ modalProject.actionText || 'Install' }}</b-button>
+          </div>
+        </template>
+      </b-modal>
+    </transition>
+  </div>
 </template>
 
-<style lang="scss" scoped>
-html {
-  height: 100%;
-}
+<style lang="scss">
+#moreInfoModal {
+  .modal-footer {
+    border: none;
+    padding-top: 0;
+  }
 
-body {
-  min-height: 100%;
-}
-
-body {
-  font-family: 'cantarell', 'sans-serif';
-}
-
-
-.website-title,
-.website-subtitle {
-  margin: 0;
-  text-align: center;
-}
-
-.pagination {
-  font-family: 'Merriweather', 'serif';
-  text-align: center;
-}
-
-.content-header {
-  font-family: 'Open Sans', 'sans-serif';
-}
-
-.post {
-  margin-bottom: 50px;
-  margin-top: 30px;
-}
-
-.post-title {
-  font-family: 'Open Sans', 'sans-serif';
-  margin-bottom: 20px;
-}
-
-.post-snippet {
-  font-family: 'Open Sans', 'sans-serif';
-  border: 5px solid #efefef;
-}
-
-.post-snippet > * {
-  margin-left: 10px;
-  margin-right: 10px;
-}
-
-.post-content {
-  font-family: 'Inconsolata', 'Courier New', 'sans-serif';
-}
-
-.post-snippet-title {
-  color: #000;
-}
-
-.post-snippet-date {
-  color: #000;
-}
-
-.website-title a:hover {
-  color: #999;
-  text-decoration: none;
-}
-
-.website-title a {
-  color: #444;
-  text-decoration: none;
-}
-
-.website-title {
-  font-family: 'Open Sans', 'sans-serif';
-  padding-top: 5%;
-  font-weight: 700;
-  font-size: 5.4rem;
-  color: #444;
-}
-
-.website-subtitle {
-  padding-bottom: 1%;
-  font-family: 'Merriweather', 'serif';
-  font-size: 1.9rem;
-  color: #999;
-}
-
-.social-media {
-  padding-bottom: 2.5%;
-  text-align: center;
-}
-
-.social-media-icon {
-  display: inline-block;
-  font-size: 1.75em !important;
-}
-
-.header-container {
-  background-color: #efefef;
-  height: 20%;
-  width: 100%;
-}
-
-.social-media ul {
-  padding: 0;
-  display: inline-block;
-}
-
-.social-media li {
-  overflow: hidden;
-  background: #fff;
-  list-style: none;
-  white-space: nowrap;
-  margin-right: 5px;
-  border-radius: 25px;
-  display: inline-block;
-}
-
-.social-media li a {
-  opacity: 0;
-  color: #666;
-  max-width: 0;
-  display: inline-block;
-  text-decoration: none;
-  transition: max-width 1s ease-out 0.1s, opacity 1s ease-out 0.1s, color;
-}
-
-.social-media li a:hover {
-  color: #c33;
-}
-
-.social-media li a i {
-  float: right;
-  display: block;
-  padding-right: 1em;
-  font: 1em/1 'rokkitt', sans-serif;
-}
-
-.social-media li .social-media-icon {
-  color: #c33;
-  line-height: 1;
-  font-size: 25px;
-  display: inline-block;
-  padding-top: 0.125em;
-  padding-bottom: 0.125em;
-  padding-left: 0.35em;
-  padding-right: 0.2em;
-}
-
-.social-media li:hover a {
-  opacity: 1;
-  max-width: 150px;
-  transition: max-width 1s ease-out 0.1s, opacity 1s ease-out 0.1s, color 0.2s;
+  .modal-header {
+    padding-bottom: 0;
+    border: none;
+  }
 }
 </style>
+
+<style lang="scss" scoped>
+.modal-enter-active,
+.modal-leave-active {
+  transition: opacity 0.5s;
+  z-index: 2001;
+}
+.modal-enter,
+.modal-leave-to {
+  opacity: 0;
+}
+
+.about-img {
+  max-width: 100%;
+  max-height: 40vh;
+}
+
+.modal-body-header {
+  padding-top: 1rem;
+}
+
+.modal-image {
+  width: 100%;
+  height: 5rem;
+  object-fit: cover;
+}
+
+.header {
+  margin: 2rem 0;
+  font-size: 2.5rem;
+  font-weight: 600;
+  text-align: center;
+}
+</style>
+
 
 <script>
 import Component from 'vue-class-component';
 import Vue from 'vue';
+import PortfolioHeader from '@/components/PortfolioHeader';
 import PortfolioNav from '@/components/PortfolioNav';
+import ProjectCard from '@/components/ProjectCard';
+
+import ProjectsJSON from '@/assets/projects.json';
 
 @Component({
   components: {
-    PortfolioNav
+    PortfolioHeader,
+    PortfolioNav,
+    ProjectCard
   }
 })
-export default class Home extends Vue {}
+export default class Home extends Vue {
+  projects = ProjectsJSON;
+  isShowing = false;
+  modalProject = null;
+
+  displayMoreInfoModal(projectId) {
+    this.modalProject = Array.from(this.projects).find(v => v.id === projectId);
+    this.$refs.moreInfoModal.show();
+  }
+}
 </script>

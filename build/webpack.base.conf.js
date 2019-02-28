@@ -27,10 +27,8 @@ module.exports = {
   output: {
     path: config.build.assetsRoot,
     filename: '[name].js',
-    publicPath:
-      process.env.NODE_ENV === 'production'
-        ? config.build.assetsPublicPath
-        : config.dev.assetsPublicPath
+    publicPath: process.env.NODE_ENV === 'production' ?
+      config.build.assetsPublicPath : config.dev.assetsPublicPath
   },
   resolve: {
     extensions: ['.js', '.vue', '.json'],
@@ -51,10 +49,6 @@ module.exports = {
         test: /\.scss$/,
         use: ['vue-style-loader', 'css-loader', 'sass-loader']
       },
-            {
-        test: /\.css$/,
-        use: ['vue-style-loader', 'css-loader']
-      },
       {
         test: /\.js$/,
         loader: 'babel-loader',
@@ -65,12 +59,32 @@ module.exports = {
         ]
       },
       {
-        test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
-        loader: 'url-loader',
-        options: {
-          limit: 10000,
-          name: utils.assetsPath('img/[name].[hash:7].[ext]')
-        }
+        test: /\.(png|jpe?g|gif|ico)(\?.*)?$/,
+        use: [{
+          loader: 'url-loader',
+          options: {
+            limit: 10000,
+            name: 'img/[name].[hash:7].[ext]'
+          }
+        }, {
+          loader: 'image-webpack-loader',
+          query: {
+            progressive: true,
+            mozjpeg: {
+              quality: 65
+            },
+            gifsicle: {
+              interlaced: false
+            },
+            optipng: {
+              optimizationLevel: 7
+            },
+            pngquant: {
+              quality: '65-90',
+              speed: 1
+            }
+          }
+        }]
       },
       {
         test: /\.(mp4|webm|ogg|mp3|wav|flac|aac)(\?.*)?$/,
@@ -86,6 +100,19 @@ module.exports = {
         options: {
           limit: 10000,
           name: utils.assetsPath('fonts/[name].[hash:7].[ext]')
+        }
+      },
+      {
+        test: /\.svg$/,
+        loader: 'vue-svg-loader',
+        options: {
+          svgo: {
+            plugins: [{
+              removeDoctype: true
+            }, {
+              removeComments: true
+            }]
+          }
         }
       }
     ]

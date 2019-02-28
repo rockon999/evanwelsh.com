@@ -16,6 +16,8 @@ if (process.env.environment === 'production') {
 app.use(history());
 
 app.use(express.static(path.join(__dirname, '/dist')));
+app.use(express.static(path.join(__dirname, '/blog')));
+
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());

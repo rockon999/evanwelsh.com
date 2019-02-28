@@ -1,8 +1,10 @@
  <template>
-  <b-navbar type="dark">
-    <b-nav-item to="/">Home</b-nav-item>
-    <b-nav-item to="/blog/">Blog</b-nav-item>
-    <b-nav-item to="/projects">Projects</b-nav-item>
+  <b-navbar sticky="top" toggleable="md" type="dark" class="bg-primary">
+    <b-navbar-nav class="ml-auto">
+      <b-nav-item href="/">Home</b-nav-item>
+      <b-nav-item href="#about">About</b-nav-item>
+      <b-nav-item href="#projects">Projects</b-nav-item>
+    </b-navbar-nav>
   </b-navbar>
 </template>
 
