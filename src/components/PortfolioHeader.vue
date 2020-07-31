@@ -1,24 +1,29 @@
 <template>
-  <header class="header-container">
-    <div class="website-title">
-      <a href="/">
-        <b>Evan</b>
-        <span class="last-name">Welsh</span>
-      </a>
-    </div>
-    <h3 class="website-subtitle">one line of code at a time</h3>
-    <div class="social-media">
-      <ul>
-        <bubble
-          url="mailto:contact@evanwelsh.com"
-          :is-brand="false"
-          iconId="envelope"
-          description="email"
+  <header class="h-100 header-container">
+    <b-row class="h-100 no-gutters no-wrap">
+      <b-col aria-hidden="true" lg md class="d-none d-md-block">
+        <img class="h-100 myself" src="/static/images/myself/myself-1.jpeg" />
+      </b-col>
+      <b-col aria-hidden="true" lg class="d-lg-block d-none">
+        <img class="h-100 myself" src="/static/images/myself/myself-2.jpeg" />
+      </b-col>
+      <b-col aria-hidden="true" lg md class="d-none d-md-block">
+        <img class="h-100 myself" src="/static/images/myself/myself-4.jpeg" />
+      </b-col>
+      <b-col aria-hidden="true" lg class="d-lg-block d-none">
+        <img class="h-100 myself" src="/static/images/myself/myself-5.jpeg" />
+      </b-col>
+      <b-col lg md sm>
+        <img
+          alt="a picture of Evan exploring the world"
+          class="h-100 myself"
+          src="/static/images/myself/myself-6.jpeg"
         />
-        <bubble url="http://github.com/rockon999/" iconId="github" description="github"/>
-        <bubble url="https://www.linkedin.com/in/evan-welsh-291577141/" iconId="linkedin" description="linkedin"/>
-      </ul>
-    </div>
+      </b-col>
+      <b-col aria-hidden="true" lg class="d-lg-block d-none">
+        <img class="h-100 myself" src="/static/images/myself/myself-7.jpeg" />
+      </b-col>
+    </b-row>
   </header>
 </template>
 
@@ -33,34 +38,14 @@ body {
   min-height: 100%;
 }
 
-.website-title,
-.website-subtitle {
-  margin: 0;
-  font-size: 3rem;
-  text-align: center;
-  font-family: 'Raleway';
-
-  .last-name {
-    color: $primary;
-  }
+.myself {
+  width: 100%;
+  height: 30vh;
+  object-fit: cover;
 }
 
-.social-media {
-  padding-top: 1rem;
-  text-align: center;
-
-  ul {
-    padding: 0;
-    display: inline-block;
-
-    li {
-      overflow: hidden;
-      list-style: none;
-      white-space: nowrap;
-
-      display: inline-block;
-    }
-  }
+.no-wrap {
+  flex-wrap: nowrap;
 }
 
 .pagination {
@@ -100,28 +85,6 @@ body {
   color: #000;
 }
 
-.website-title {
-  padding-top: 5%;
-  font-weight: 700;
-  font-size: 4rem;
-  color: #444;
-  a {
-    color: #444;
-    text-decoration: none;
-
-    &:hover {
-      text-decoration: none;
-    }
-  }
-}
-
-.website-subtitle {
-  padding-bottom: 1%;
-  font-family: 'Merriweather', 'serif';
-  font-size: 1.2rem;
-  color: #444;
-}
-
 .header-container {
   height: 20%;
   width: 100%;
@@ -131,14 +94,9 @@ body {
 <script>
 import Component from 'vue-class-component';
 import Vue from 'vue';
-import PortfolioNav from '@/components/PortfolioNav';
-import SocialMediaBubble from '@/components/SocialMediaBubble';
 
 @Component({
-  components: {
-    PortfolioNav,
-    bubble: SocialMediaBubble
-  }
+  components: {}
 })
 export default class PortfolioHeader extends Vue {}
 </script>

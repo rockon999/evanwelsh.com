@@ -1,120 +1,67 @@
 <template>
-  <li v-if="li">
-    <social-link :url="url" :description="description" :is-brand="isBrand" :icon-id="iconId"/>
-  </li>
-
-  <social-link v-else :url="url" :description="description" :is-brand="isBrand" :icon-id="iconId"/>
+  <a class="bubble bubble-link" :href="link" v-if="link" :aria-label="header">
+    <div class="content">
+      <slot></slot>
+    </div>
+    <p v-if="content" class="text">{{ content }}</p>
+  </a>
+  <div class="bubble" :aria-label="header" v-else>
+    <div class="content">
+      <slot></slot>
+    </div>
+    <p v-if="content" class="text">{{ content }}</p>
+  </div>
 </template>
 
 <script>
 import Vue from 'vue';
 import Component from 'vue-class-component';
 
-const SocialLink = `
-  <a class="li" :href="url">
-      <i :class="{
-        'social-media-icon': true, 
-        fab: isBrand, 
-        fas: !isBrand, 
-        ['fa-' + iconId]: true, 
-        'icon-link': true}">
-      </i>
-   </a>
-`;
-
-const CommonProps = {
-  description: {
-    type: String,
-    required: true
-  },
-  iconId: {
-    type: String,
-    required: true
-  },
-  url: {
-    type: String,
-    required: true
-  },
-  isBrand: {
-    type: Boolean,
-    required: false,
-    default: true
-  }
-};
-
 @Component({
-  components: {
-    SocialLink: {
-      template: SocialLink,
-      props: {
-        ...CommonProps
-      }
-    }
-  },
   props: {
-    li: {
-      type: Boolean,
+    link: {
+      type: String,
       required: false,
-      default: true
+      default: ''
     },
-    ...CommonProps
+    content: {
+      type: String,
+      required: false,
+      defaultValue: ''
+    },
+    header: {
+      type: String,
+      default: false
+    }
   }
 })
 export default class SocialMediaBubble extends Vue {}
 </script>
 
 <style lang="scss">
-.li {
-  overflow: hidden;
-  list-style: none;
-  white-space: nowrap;
-  display: inline-block;
+.bubble {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  color: #fefefe;
+  font-size: 1.2rem;
+  line-height: 26px;
 
-  .icon-link {
-    width: 2.7rem;
-    height: 2.7rem;
+  &:matches() {
+    color: #fefefe;
   }
 
-  svg {
-    background: #444;
-    border-radius: 25px;
-    padding: 0.5rem;
-  }
-
-  .icon-link-a {
-    opacity: 0;
-    color: #666;
-    max-width: 0;
-
-    display: inline-block;
+  &.bubble-link:hover {
+    color: #fefefe;
     text-decoration: none;
-    transition: max-width 1s ease-out 0.1s, opacity 1s ease-out 0.1s, color;
   }
 
-  a {
-    &:hover {
-      color: #fff;
-    }
-
-    i {
-      color: #fff;
-      float: right;
-      display: block;
-
-      font-size: 1em;
-    }
+  .content {
+    margin: 0 3px;
   }
 
-  .social-media-icon {
-    color: #fff;
-    line-height: 1;
-    font-size: 25px;
-    display: inline-block;
+  .text {
+    margin: 2px;
   }
-}
-
-.social-media-icon {
-  display: inline-block;
-  font-size: 1.75em !important;
 }
 </style>

@@ -1,49 +1,71 @@
 <template>
   <div>
-    <portfolio-header/>
-    <!--TODO <portfolio-nav id="navbar"/>-->
-    <b-container>
-      <div class="header" id="projects">Projects</div>
-      <b-row :no-gutters="true">
-        <b-col v-for="project of projects" :key="project.name" sm="12" md="6" lg="4">
-          <project-card
-            @more-info-clicked="displayMoreInfoModal"
-            :image-path="project.imagePath"
-            :project="project"
-          />
-        </b-col>
-      </b-row>
-      <div class="header" id="about">About</div>
-      <b-row>
-        <b-col order="2" order-md="2" md="8" sm="12">
-          I am a passionate problem-solver who loves exploring new technologies and applications to create
-          products that will resonate with users and also be maintainable for years to come.
-          Luckily, I have been able to work in a wide variety of areas over my past 8 years of
-          developing. I started out developing Minecraft plugins and mods in middle school and later in
-          high school transitioned to JavaScript and C development within the GNOME GNU/Linux ecosystem.
-          In my college years, I have had internships in both web and mobile development and had the
-          opportunity to work with several organizations on projects in both these areas. I have used Ionic, React Native, and Flutter to build cross-platform mobile applications, Vue.js and React for web frontends, and Express and Rails for backend projects. I use a diverse array of languages in my development including JavaScript, C, Python, Java, TypeScript, PHP, and Kotlin.
-        </b-col>
-        <b-col
-          class="about-img-container"
-          align-self="center"
-          order="1"
-          order-md="1"
-          md="4"
-          cols="auto"
-        >
-          <b-img
-            class="text-center about-img"
-            rounded="circle"
-            thumbnail
-            src="/static/images/me.jpg"
-          />
-        </b-col>
-      </b-row>
-    </b-container>
-    <br>
-    <br>
-    <br>
+    <b-row class="no-gutters">
+      <b-col lg="4" md="5" order-md="1" order="2" cols="12">
+        <div class="about-sidebar">
+          <h1 class="website-title">
+            <a href="/">
+              <b>Evan</b>
+              <span class="last-name">Welsh</span>
+            </a>
+          </h1>
+          <h3 class="website-subtitle">one line of code at a time</h3>
+          <bubble
+            header="email"
+            link="mailto:contact@evanwelsh.com"
+            content="contact@evanwelsh.com"
+          >
+            <mail-icon />
+          </bubble>
+          <bubble header="my hometown" content="Grand Forks, North Dakota">
+            <home-icon />
+          </bubble>
+          <bubble link="http-in://github.com/ewlsh/" header="github" content="@ewlsh">
+            <github-icon />
+          </bubble>
+          <div>
+            <b-row class="social-links no-gutters">
+              <b-col cols="auto">
+                <bubble header="linkedin" link="https://www.linkedin.com/in/evan-welsh-291577141/">
+                  <linkedin-icon />
+                </bubble>
+              </b-col>
+              <b-col cols="auto">
+                <bubble header="instagram" link="https://www.instagram.com/ewlsh/">
+                  <instagram-icon />
+                </bubble>
+              </b-col>
+              <b-col cols="auto">
+                <bubble header="twitter" link="https://www.twitter.com/ewlsh/">
+                  <twitter-icon />
+                </bubble>
+              </b-col>
+            </b-row>
+          </div>
+        </div>
+      </b-col>
+      <b-col lg="8" md="7" order-md="2" order="1" cols="12">
+        <portfolio-header />
+      </b-col>
+      <b-col class="content" cols="12" order="4">
+        <b-row>
+          <b-col>
+            <section class="projects">
+              <h4 class="header" id="projects">What I'm Working On</h4>
+              <b-row class="no-gutters">
+                <b-col v-for="project of projects" :key="project.name" sm="12" md="6" lg="4">
+                  <project-card
+                    @more-info-clicked="displayMoreInfoModal"
+                    :image-path="project.imagePath"
+                    :project="project"
+                  />
+                </b-col>
+              </b-row>
+            </section>
+          </b-col>
+        </b-row>
+      </b-col>
+    </b-row>
     <transition name="modal">
       <b-modal
         v-show="isShowing"
@@ -102,6 +124,35 @@
 </style>
 
 <style lang="scss" scoped>
+@import '../scss/variables';
+
+.projects {
+  margin: 1rem;
+}
+
+.website-title {
+  padding-top: 5%;
+  font-weight: 700;
+  font-size: 4rem;
+  color: #fefefe;
+  a {
+    color: #fefefe;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+.website-subtitle {
+  padding-bottom: 1%;
+  text-align: left;
+  font-family: 'Merriweather', 'serif';
+  font-size: 0.75rem;
+  color: #fefefe;
+}
+
 .modal-enter-active,
 .modal-leave-active {
   transition: opacity 0.5s;
@@ -110,6 +161,28 @@
 .modal-enter,
 .modal-leave-to {
   opacity: 0;
+}
+
+.social-link {
+  color: #fff;
+}
+
+.website-title {
+  margin: 0;
+  font-size: 3rem;
+  text-align: left;
+  font-family: 'Raleway';
+
+  .last-name {
+    color: $primary;
+  }
+}
+
+.about-sidebar {
+  background-color: #000;
+  padding: 2rem;
+  height: 100%;
+  width: 100%;
 }
 
 @media (max-width: 767px) {
@@ -122,6 +195,12 @@
   .about-img-container {
     margin-left: auto;
     margin-right: auto;
+  }
+}
+
+.social-links {
+  .bubble {
+    margin: 3px;
   }
 }
 
@@ -144,7 +223,7 @@
   margin: 2rem 0;
   font-size: 2.5rem;
   font-weight: 600;
-  text-align: center;
+  text-align: left;
 }
 </style>
 
@@ -153,16 +232,31 @@
 import Component from 'vue-class-component';
 import Vue from 'vue';
 import PortfolioHeader from '@/components/PortfolioHeader';
-import PortfolioNav from '@/components/PortfolioNav';
 import ProjectCard from '@/components/ProjectCard';
+import SocialMediaBubble from '@/components/SocialMediaBubble';
 
 import ProjectsJSON from '@/assets/projects.json';
+
+import {
+  MailIcon,
+  HomeIcon,
+  GithubIcon,
+  LinkedinIcon,
+  InstagramIcon,
+  TwitterIcon
+} from 'vue-feather-icons';
 
 @Component({
   components: {
     PortfolioHeader,
-    PortfolioNav,
-    ProjectCard
+    ProjectCard,
+    MailIcon,
+    HomeIcon,
+    GithubIcon,
+    TwitterIcon,
+    InstagramIcon,
+    LinkedinIcon,
+    bubble: SocialMediaBubble
   }
 })
 export default class Home extends Vue {
