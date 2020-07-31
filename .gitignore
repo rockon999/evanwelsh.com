@@ -1,9 +1,14 @@
 .DS_Store
 node_modules/
 dist/
+public/
+!public/atom.xml
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# Hosting files
+.firebase
 
 # Editor directories and files
 .idea
