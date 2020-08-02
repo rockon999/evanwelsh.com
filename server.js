@@ -15,7 +15,7 @@ if (process.env.environment === 'production') {
 
 app.use(history());
 
-app.use(express.static(path.join(__dirname, '/dist')));
+app.use(express.static(path.join(__dirname, '/docs')));
 app.use(express.static(path.join(__dirname, '/blog')));
 
 

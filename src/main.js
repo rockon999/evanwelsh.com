@@ -4,9 +4,6 @@
 import Vue from 'vue';
 import BootstrapVue from 'bootstrap-vue';
 
-import BootstrapJs from 'bootstrap/dist/js/bootstrap'; // eslint-disable-line
-import BootstrapVueCSS from 'bootstrap-vue/dist/bootstrap-vue.css'; // eslint-disable-line
-
 import App from './App';
 import router from './router';
 
