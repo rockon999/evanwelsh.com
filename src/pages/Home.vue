@@ -20,18 +20,28 @@
           <bubble header="my hometown" content="Grand Forks, North Dakota">
             <home-icon />
           </bubble>
-          <bubble link="https://github.com/ewlsh/" header="github" content="@ewlsh">
+          <bubble
+            link="https://github.com/ewlsh/"
+            header="github"
+            content="@ewlsh"
+          >
             <github-icon />
           </bubble>
           <div>
             <b-row class="social-links no-gutters">
               <b-col cols="auto">
-                <bubble header="linkedin" link="https://www.linkedin.com/in/evan-welsh-291577141/">
+                <bubble
+                  header="linkedin"
+                  link="https://www.linkedin.com/in/evan-welsh-291577141/"
+                >
                   <linkedin-icon />
                 </bubble>
               </b-col>
               <b-col cols="auto">
-                <bubble header="instagram" link="https://www.instagram.com/ewlsh/">
+                <bubble
+                  header="instagram"
+                  link="https://www.instagram.com/ewlsh/"
+                >
                   <instagram-icon />
                 </bubble>
               </b-col>
@@ -53,7 +63,13 @@
             <section class="projects">
               <h4 class="header" id="projects">What I'm Working On</h4>
               <b-row class="no-gutters">
-                <b-col v-for="project of projects" :key="project.name" sm="12" md="6" lg="4">
+                <b-col
+                  v-for="project of projects"
+                  :key="project.name"
+                  sm="12"
+                  md="6"
+                  lg="4"
+                >
                   <project-card
                     @more-info-clicked="displayMoreInfoModal"
                     :image-path="project.imagePath"
@@ -86,7 +102,7 @@
                   :src="modalProject.imagePath"
                   rounded
                 />
-                <h3 class="modal-body-header">{{modalProject.name}}</h3>
+                <h3 class="modal-body-header">{{ modalProject.name }}</h3>
                 <p>{{ modalProject.description }}</p>
               </b-col>
             </b-row>
@@ -96,12 +112,14 @@
               v-if="modalProject.githubUrl"
               :href="modalProject.githubUrl"
               variant="default"
-            >GitHub</b-button>
+              >GitHub</b-button
+            >
             <b-button
               v-if="modalProject.actionUrl"
               :href="modalProject.actionUrl"
               variant="primary"
-            >{{ modalProject.actionText || 'Install' }}</b-button>
+              >{{ modalProject.actionText || 'Install' }}</b-button
+            >
           </div>
         </template>
       </b-modal>
@@ -226,7 +244,6 @@
   text-align: left;
 }
 </style>
-
 
 <script>
 import Component from 'vue-class-component';

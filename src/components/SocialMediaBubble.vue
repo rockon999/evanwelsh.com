@@ -47,7 +47,9 @@ export default class SocialMediaBubble extends Vue {}
   font-size: 1.2rem;
   line-height: 26px;
 
-  &:matches() {
+  &:hover,
+  &:focus,
+  &:active {
     color: #fefefe;
   }
 
