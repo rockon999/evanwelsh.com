@@ -20,7 +20,7 @@
           <bubble header="my hometown" content="Grand Forks, North Dakota">
             <home-icon />
           </bubble>
-          <bubble link="http-in://github.com/ewlsh/" header="github" content="@ewlsh">
+          <bubble link="https://github.com/ewlsh/" header="github" content="@ewlsh">
             <github-icon />
           </bubble>
           <div>
