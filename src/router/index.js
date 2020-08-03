@@ -1,7 +1,6 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 import Home from '@/pages/Home';
-import NotFound from '@/pages/NotFound';
 
 Vue.use(Router);
 
@@ -13,8 +12,8 @@ export default new Router({
   routes: [
     {
       path: '*',
-      name: 'Projects',
-      component: NotFound
+      name: 'Not Found',
+      component: () => import('@/pages/NotFound')
     },
     {
       path: '/',

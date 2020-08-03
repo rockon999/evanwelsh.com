@@ -58,7 +58,7 @@
         <portfolio-header />
       </b-col>
       <b-col class="content" cols="12" order="4">
-        <b-row>
+        <b-row v-if="projects" class="no-gutters">
           <b-col>
             <section class="projects">
               <h4 class="header" id="projects">What I'm Working On</h4>
@@ -78,6 +78,11 @@
                 </b-col>
               </b-row>
             </section>
+          </b-col>
+        </b-row>
+        <b-row class="no-gutters justify-content-center" v-else>
+          <b-col cols="auto">
+            <b-spinner class="loading"></b-spinner>
           </b-col>
         </b-row>
       </b-col>
@@ -196,6 +201,11 @@
   }
 }
 
+.loading {
+  text-align: center;
+  margin-top: 30px;
+}
+
 .about-sidebar {
   background-color: #000;
   padding: 2rem;
@@ -252,8 +262,6 @@ import PortfolioHeader from '@/components/PortfolioHeader';
 import ProjectCard from '@/components/ProjectCard';
 import SocialMediaBubble from '@/components/SocialMediaBubble';
 
-import ProjectsJSON from '@/assets/projects.json';
-
 import {
   MailIcon,
   HomeIcon,
@@ -277,13 +285,27 @@ import {
   }
 })
 export default class Home extends Vue {
-  projects = ProjectsJSON;
+  projects = null;
   isShowing = false;
   modalProject = null;
 
+  created() {
+    import('@/assets/projects.json')
+      .then(({ default: results }) => {
+        this.projects = [...Array.from(results.projects)];
+      })
+      .catch(err => {
+        console.error(err);
+      });
+  }
+
   displayMoreInfoModal(projectId) {
-    this.modalProject = Array.from(this.projects).find(v => v.id === projectId);
-    this.$refs.moreInfoModal.show();
+    if (this.projects) {
+      this.modalProject = Array.from(this.projects).find(
+        v => v.id === projectId
+      );
+      this.$refs.moreInfoModal.show();
+    }
   }
 }
 </script>

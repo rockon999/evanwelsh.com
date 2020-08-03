@@ -1,0 +1,281 @@
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Evan Welsh</title>
+  <link href="http://evanwelsh.com/atom.xml" rel="self" />
+  <link href="http://evanwelsh.com/" />
+  <updated>2018-07-31T15:37:04+00:00</updated>
+  <id>http://evanwelsh.com</id>
+  <author>
+    <name>Evan Welsh</name>
+    <email>contact@evanwelsh.com</email>
+  </author>
+  <entry>
+    <title>GUADEC Thoughts</title>
+    <link href="http://evanwelsh.com/2018/07/16/guadec-thoughts/" />
+    <updated>2018-07-16T00:00:00+00:00</updated>
+    <id>http://evanwelsh.com/2018/07/16/guadec-thoughts</id>
+    <content type="html">
+      <h1 id="guadec-thoughts">GUADEC Thoughts</h1>
+      <h2 id="background">Background</h2>
+      <p>
+        This month I had the amazing opportunity to attend GUADEC, the GNOME
+        community conference in Europe! The GNOME Foundation generously
+        sponsored this trip as part of my Google Summer of Code project and I
+        can’t thank them enough!
+      </p>
+      <h2 id="location">Location</h2>
+      <p>
+        This year GUADEC took place in Almería, Spain at the Universidad de
+        Almería. We couldn’t have asked for a better location. The city offered
+        amazing cultural opportunities and the university space was
+        well-maintained, had excellent WiFi, and a very kind staff!
+      </p>
+      <h2 id="day-0">Day 0</h2>
+      <p>I arrived!</p>
+      <h2 id="day-1">Day 1</h2>
+      <p>
+        I started off GUADEC right by volunteering at check-in. I made many
+        buttons at the merchandise stand for eager attendees and diagnosed some
+        interesting CUPS driver errors.
+      </p>
+      <p>
+        From there, I moved on to practicing for my lightning talk with Carlos
+        Soriano. All of the interns present gave a short presentation on their
+        work, it served as a great time to bond with the other interns and sync
+        into their work.
+      </p>
+      <p>
+        After the lightning talks, the first day of GUADEC - gone in a second -
+        came to a close and we moved to the beach for an exciting Beach Party!
+        This was my first taste of the Mediterranean and it wouldn’t be my last.
+      </p>
+      <h2 id="day-2">Day 2</h2>
+      <p>
+        I started Day 2 with
+        <a
+          href="https://2018.guadec.org/pages/talks-and-events.html#abstract-30-javascript_in_gnome_in_2018"
+          >JavaScript in GNOME in 2018</a
+        >
+        and thoroughly enjoyed the work Philip has put in over the course of
+        this year. I stayed in the room to see
+        <a
+          href="https://2018.guadec.org/pages/talks-and-events.html#abstract-25-making_a_phone_call_with_gnome"
+          >Making a Phone Call in GNOME</a
+        >
+        which was an interesting introduction to the upcoming Purism Phone and
+        also a fascinating look into the telephony stack of GNOME. It certainly
+        caught my eye and I will be following their development blog closely.
+      </p>
+      <p>
+        I took a short break from talks at this point and got together with Avi,
+        my fellow GNOME JavaScript intern, for some interesting discussions on
+        GJS Linting and Developer Experience in the BoF/Hackspace.
+      </p>
+      <p>
+        I returned to the talks to see some interesting work by Slimbook and
+        then was exciting to attend my first GNOME Annual Meeting! It was great
+        to see the board discuss the future of GNOME and how they plan to
+        allocate the recent donations they’ve received!
+      </p>
+      <p>
+        At the end of the day a few friends and I split off from the group,
+        grabbed some food from a local market, and had a nice picnic in a local
+        park. We joined the group again for the end of a fantastic castle tour
+        and a beautiful dance show afterwards.
+      </p>
+      <h2 id="day-3">Day 3</h2>
+      <p>
+        Today marked the final day of official GUADEC! I very much enjoyed the
+        final lightning talks which were an excellent opportunity for fun GNOME
+        projects, interesting life skills (lock-picking :D), and amazing human
+        beings to all come together.
+      </p>
+      <p>
+        And with that the official conference was done and it was time to BoF!
+      </p>
+      <h2 id="day-4">Day 4</h2>
+      <p>
+        On the first day of BoFs I volunteered my first few hours helping
+        organize t-shirts and cleanup the conference supplies with Kat. From
+        there, I spent time with friends in the hackfest room working some GJS
+        developer tools that we had discussed earlier in the conference.
+      </p>
+      <p>
+        The day ended with a nice trip to the beach with my fellow interns and
+        we build our first sandcastle. Little did we know this would be the
+        prototype for
+        <a
+          href="https://wiki.gnome.org/GUADEC/2018/Hacking%20days/SandcastleBoF"
+          >Sandcastle BoF</a
+        >
+        the following day.
+      </p>
+      <h2 id="day-5">Day 5</h2>
+      <p>
+        The second day of BoF(s) was by far my favorite. I sat in on the GUADEC
+        and Theming BoFs and had a great time offering my input and suggestions
+        in addition to hearing interesting viewpoints from around the community.
+      </p>
+      <p>
+        In the GUADEC BoF we talked a lot about how to better streamline the
+        conference in the future and fix technical and logistical issues going
+        forward. I’m working on better management inside of GitLab (more to
+        follow!) and exploring dedicated hardware for mobile payment systems!
+      </p>
+      <p>
+        For theming there was a lot of discussion on how to balance the needs of
+        themers, app developers, and the community overall. I think we settled
+        on a good framework moving forward: a palette-style API for downstream
+        distro branding, a more limited, yet specified stock icon pack, and an
+        extended community icon specification for other purposes.
+      </p>
+      <p>
+        At the end of the day, exhausted. Niclas and I got everyone together for
+        an exciting and amazing Sandcastle BoF! It was an excellent afternoon of
+        everyone in GNOME coming together for some super fun and super relaxing
+        beach time.
+      </p>
+      <h2 id="day-6">Day 6</h2>
+      <p>
+        On the final day of BoFs I joined the Developer Center group to discuss
+        GJS’ work on developer documentation and ways forward for GNOME as a
+        community.
+      </p>
+      <p>We discussed…</p>
+      <ul>
+        <li>A hackfest in February to work on a product</li>
+        <li>
+          Standardizing introductory tutorials on one, newcomer-friendly
+          language and offering alternative languages later
+        </li>
+        <li>Platforms to build on</li>
+        <li>Multiple language support</li>
+        <li>
+          Addressing the messy state of Developer Center as it stands today
+        </li>
+      </ul>
+      <p>
+        Overall, after this BoF I felt very optimistic for the future of the
+        GNOME development experience.
+      </p>
+      <p>
+        In the afternoon I worked on GJS with Avi and Philip, but spent a bit of
+        time with the Meson BoF debugging an issue I had with Meson and Babel
+        integration and discussed improving the default build settings for Meson
+        to reduce confusion in instances where files retain their names during
+        compilation (JavaScript compilation).
+      </p>
+      <p>
+        After a long day, I joined my friends in exploring Almería (we found a
+        wonderful bakery!) before preparing to leave and departing via Bus to
+        Madrid where I hopped on a plane back to home.
+      </p>
+      <p>Thanks again to the GNOME Foundation!</p>
+      <p>
+        <img
+          src="/images/sponsorship.png"
+          alt="Sponsored by the GNOME Foundation"
+        />
+      </p>
+    </content>
+  </entry>
+  <entry>
+    <title>Monday Markdown</title>
+    <link href="http://evanwelsh.com/2018/06/04/monday-markdown-1/" />
+    <updated>2018-06-04T00:00:00+00:00</updated>
+    <id>http://evanwelsh.com/2018/06/04/monday-markdown-1</id>
+    <content type="html">
+      <h1 id="monday-markdown-1">Monday Markdown #1:</h1>
+      <p>Rewriting the Development Experience for GNOME Javscript</p>
+      <h3 id="greetings-world-">Greetings World 😊</h3>
+      <p>A lot has happened over the past few weeks!</p>
+      <p>
+        I’ve spent the first portion of the coding period focused on improving
+        the documentation browser for GNOME Javascript. In 2015/16 ptomato began
+        porting GIR sources (the source of most GJS documentation) to
+        [DevDocs.io], an open-source documentation browser, using g-ir-doc-tool
+        in gobject-introspection. He did excellent work and produced a
+        functioning product that now lives at [devdocs.baznga.org]. My goals
+        were to take the current product and incorporate GNOME theming, fix
+        issues with incorrect documentation, rebase the project on upstream, and
+        reorient some of the project’s features to better serve an object
+        oriented and GNOME model.
+      </p>
+      <p>
+        The first task I began was rebasing the project on upstream. Our fork
+        was approx. 500 commits behind upstream, commits which included critical
+        back-end fixes and front-end compatibility work. The merge introduced
+        several bugs that took a few days to iron out. One CoffeeScript file
+        ended up with a subtle arrow function syntax error that changed
+        execution and broke some documentation loading, the Ruby on Rails
+        routing was broken, etc.
+      </p>
+      <p>After the project was rebased, I began the GNOME-ification process!</p>
+      <p>
+        I began to introduce a GNOME-inspired theme (both from gnome.org and the
+        GNOME HIG), working off this mockup:
+      </p>
+      <p>
+        <img
+          src="images/devdocs-mockup.png"
+          alt="Mockup of GNOME DevDocs Theme"
+        />
+      </p>
+      <p>
+        I first began removing some absolute positioning from upstream’s
+        front-end. Absolute positioning was used for numerous core elements
+        instead of using modern solutions such as
+        <code class="highlighter-rouge">display: flex</code>. This hindered easy
+        design iteration as any minute change was liked to break another
+        element. The numerous changes which I intended to implement in the new
+        theme also functioned better in a responsive, flex layout.
+      </p>
+      <p><img src="images/current.png" alt="First Iteration" /></p>
+      <p>
+        Here you can see several improvements. Primarily, dropdowns have been
+        eliminated when unnecessary, the header had been redesigned in a GNOME
+        fashion, search has become a drop-down, and “enabled” vs. “disabled” has
+        become “favorited” vs. “all”. The primary goal of the former changes was
+        to make the site feel “GNOME-y”, the latter change was to make all the
+        documentation accessible. For our purposes it made more sense to make
+        everything visible than to disable some documentations and then force
+        users to enable them to search, view, and utilize them.
+      </p>
+      <p><img src="images/current-5-30.png" alt="Second Iteration" /></p>
+      <p>
+        Here you can see that index pages for sources are now sorted by type
+        instead of a simple alphabetical listing.
+      </p>
+      <p><img src="images/current-5-31.png" alt="Third Iteration" /></p>
+      <p>
+        In the third iteration there are many subtle CSS fixes, search has been
+        made permanent instead of a dropdown (some user testing indicated the
+        dropdown was confusing/less helpful). Here you can also see that we’ve
+        removed “duplicate” entries and removed the namespace prefixes. Both of
+        these changes make the site more usable and object-oriented friendly.
+      </p>
+      <ul>
+        <li>
+          Duplicate entries occured where the “type” was merely an index of the
+          functions and classed for a specific strings. See below for an
+          illustration.
+        </li>
+      </ul>
+      <p>
+        <img src="images/devdocs-4.png" alt="Problem with duplicate entries" />
+      </p>
+      <p>
+        Under the hood, at this point we made several more improvements. The
+        repository utilized the stable branch (currently gnome-3-28) of
+        gobject-introspection along with patches to properly format
+        documentation for DevDocs. In gobject-introspection I also fixed
+        long-standing bugs that made methods that were not introspectable and
+        thus not in GJS show in class documentation. The docker instance was
+        also upgraded and version-fixed so it would not break do to dependency
+        errors in the future.
+      </p>
+      <p>I think that’s it for this Monday Markdown, I’ll see you next week.</p>
+      <p>Evan // rockon999 // ewlsh</p>
+      <p>find me on matrix under rockon999.</p>
+    </content>
+  </entry>
+</feed>

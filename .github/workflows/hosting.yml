@@ -24,7 +24,7 @@ jobs:
       uses: actions/upload-artifact@master
       with:
         name: build-site
-        path: public
+        path: dist
   deploy:
     name: Deploy
     needs: build
@@ -36,7 +36,7 @@ jobs:
         uses: actions/download-artifact@master
         with:
           name: build-site
-          path: public/
+          path: dist/
       - name: GitHub Action for Firebase
         uses: w9jds/firebase-action@v1.3.0
         with:
