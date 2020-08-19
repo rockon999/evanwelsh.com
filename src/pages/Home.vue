@@ -61,7 +61,7 @@
         <b-row v-if="projects" class="no-gutters">
           <b-col>
             <section class="projects">
-              <h4 class="header" id="projects">What I'm Working On</h4>
+              <h4 class="header" id="projects">A Few Things I've Done</h4>
               <b-row class="no-gutters">
                 <b-col
                   v-for="project of projects"
