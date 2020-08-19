@@ -3,7 +3,7 @@
     {
       "id": "gygb",
       "name": "Get Your GreenBack Tompkins",
-      "imagePath": "/static/images/projects/gygb/gygb.png/",
+      "imagePath": "/static/images/projects/gygb/gygb.png",
       "description": "I worked with a group of passionate developers and designers to build a sustainable housing quiz and interactive exhibit for a local non-profit. I worked on every aspect of the stack: backend, web, and an iPad app!",
       "actionUrl": "https://www.tinypowerhouse.org/",
       "actionText": "Check It Out!",
